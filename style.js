@@ -84,7 +84,7 @@ function boxes(activePlayer) {
                 box[0] = 0;
                 //check if player 1 win the match
                 isWinOrDraw();
-                
+
             } else {
                 //insert image inside box
                 document.querySelector(".box-1").insertAdjacentHTML('afterbegin', circle);
@@ -98,7 +98,7 @@ function boxes(activePlayer) {
                 box[0] = 1;
                 //check if player 1 win the match
                 isWinOrDraw();
-                
+
             }
         }
 
@@ -401,7 +401,7 @@ function uiActivePlayer(activePlayer) {
 function resetBox() {
     box.fill(null, 0);
 }
-function player1Win(){
+function player1Win() {
     //make all boxed non clickable
     ISCLICKED.fill(0, 0);
     // console.log("Player 1 win");
@@ -417,7 +417,7 @@ function player1Win(){
 
 
 function player2Win() {
-    
+
     //make all boxed non clickable
     ISCLICKED.fill(0, 0);
     // console.log("Player 2 win");
@@ -430,9 +430,9 @@ function player2Win() {
     document.querySelector("#winner-name").innerHTML = player2Name;
 }
 
-document.getElementById("restart").addEventListener("click", function(){
+document.getElementById("restart").addEventListener("click", function () {
     //change activeplayer
-    if(activePlayer === 0){
+    if (activePlayer === 0) {
         activePlayer = 1;
         document.getElementById("p-2-s-1").classList.add('flash');
     }
@@ -440,15 +440,15 @@ document.getElementById("restart").addEventListener("click", function(){
         activePlayer = 0;
         document.getElementById("p-1-s-1").classList.add('flash');
     }
-    
+
     //hide winner status box
     document.querySelector(".win-draw-status").style.display = "none";
     //reset and initialize
-    box.fill(null,0);
+    box.fill(null, 0);
     ISCLICKED.fill(1, 0);
     //delete all cross circle images
     var x = document.querySelectorAll(".box");
-    x.forEach(function(value){
+    x.forEach(function (value) {
         return value.innerHTML = "";
     });
     //hide winner and draw
@@ -460,7 +460,7 @@ document.getElementById("restart").addEventListener("click", function(){
     });
     //restore win text and color
     document.querySelector("#winner-name").style.color = "rgb(30, 255, 0)";
-    document.querySelector("#win-text").innerHTML = ' Win';
+    document.querySelector("#win-text").innerHTML = " win";
 
 });
 
@@ -473,15 +473,15 @@ function isWinOrDraw() {
                 document.querySelector(".box-1 > img").style.filter = "none";
                 document.querySelector(".box-2 > img").style.filter = "none";
                 document.querySelector(".box-3 > img").style.filter = "none";
-                
-                
+
+
             }
             else if (box[0] === 1) {
                 player2Win();
                 document.querySelector(".box-1 > img").style.filter = "none";
                 document.querySelector(".box-2 > img").style.filter = "none";
                 document.querySelector(".box-3 > img").style.filter = "none";
-                
+
             }
         }
     }
@@ -599,10 +599,10 @@ function isWinOrDraw() {
             }
         }
     }
-    var draw = box.find(function(value){
+    var draw = box.find(function (value) {
         return value === null;
     });
-    if(draw === undefined){
+    if (draw === undefined) {
         document.querySelector("#p-1-s-1").classList.remove("flash");
         document.querySelector("#p-2-s-1").classList.remove("flash");
         resetBox();
@@ -618,6 +618,6 @@ function isWinOrDraw() {
         document.querySelector("#winner-name").style.color = "rgb(252, 154, 26)";
         //delete win text
         document.querySelector("#win-text").innerHTML = '';
-    }   
+    }
 }
 
