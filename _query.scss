@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px){
+    header {
+        .player {
+            
+            &-1,&-2 {
+                flex-direction: column;
+            }
+            &-2 {
+                .section-1 {
+                    order: 1;
+                }
+                .section-2 {
+                    order: 2;
+                }
+                .section-3 {
+                    order: 3;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px){
+    header {
+        margin-bottom: 8rem;
+    }
+    .container {
+        max-width: 200px;
+        height: 200px;
+        .box {
+            height: 100px;
+            width: 100px;
+            border-width: 6px;
+
+            img {
+                height: 7.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    h1 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    
+}
